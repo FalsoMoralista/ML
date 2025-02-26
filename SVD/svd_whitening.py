@@ -14,7 +14,18 @@ svd_helper.train(X=X, no_steps=10000)
 
 U, S, V_T = torch.linalg.svd(X)
 
+print('S Size:', S.size())
+print(S)
+
 u, s, v_T = svd_helper.SVD()
+
+print('S Size:', s.size())
+print(s)
+
+print('V Size:', v_T.size())
+print(V_T)
+
+
 
 print('difference:', torch.linalg.matrix_norm(U - u, ord='fro'))
 print('difference:', torch.linalg.matrix_norm(S - s, ord='fro'))
